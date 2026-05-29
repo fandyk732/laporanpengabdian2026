@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laporan Pengabdian Masyarakat – SMK Al Kaaffah Kepanjen 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --hijau: #1a4731;
+      --hijau-mid: #2d6a4f;
+      --hijau-light: #52b788;
+      --emas: #c9a84c;
+      --emas-light: #f0d080;
+      --krem: #fdf8f0;
+      --krem-dark: #f5ede0;
+      --teks: #1c1c1c;
+      --teks-sekunder: #4a4a4a;
+      --putih: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background: var(--krem);
+      color: var(--teks);
+      line-height: 1.75;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--hijau);
+      border-bottom: 3px solid var(--emas);
+      padding: 0.75rem 2rem;
+      display: flex; align-items: center; gap: 2rem;
+      flex-wrap: wrap;
+    }
+    nav .brand {
+      font-family: 'Space Mono', monospace;
+      color: var(--emas-light);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    nav a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--emas-light); }
+
+    /* ── COVER ── */
+    #cover {
+      min-height: 100vh;
+      background:
+        linear-gradient(160deg, rgba(26,71,49,0.92) 0%, rgba(45,106,79,0.88) 60%, rgba(82,183,136,0.6) 100%),
+        repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(201,168,76,0.04) 40px, rgba(201,168,76,0.04) 80px);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    #cover::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(201,168,76,0.12) 0%, transparent 60%);
+    }
+    .cover-badge {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--emas-light);
+      border: 1px solid rgba(201,168,76,0.5);
+      padding: 0.4rem 1.2rem;
+      border-radius: 2rem;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.8s ease both;
+    }
+    .cover-instansi {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.65);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+    .cover-sekolah {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 3.2rem);
+      font-weight: 900;
+      color: var(--putih);
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+    .cover-tagline {
+      color: var(--emas);
+      font-size: 0.85rem;
+      font-family: 'Source Serif 4', serif;
+      font-style: italic;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s 0.25s ease both;
+    }
+    .cover-ornament {
+      width: 80px; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--emas), transparent);
+      margin: 0 auto 2.5rem;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+    .cover-judul {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--emas-light);
+      line-height: 1.25;
+      max-width: 720px;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s 0.35s ease both;
+    }
+    .cover-lokasi {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      font-family: 'Source Serif 4', serif;
+      margin-bottom: 0.4rem;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+    .cover-tanggal {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--emas);
+      letter-spacing: 0.1em;
+      margin-bottom: 3rem;
+      animation: fadeUp 0.8s 0.45s ease both;
+    }
+    .cover-stats {
+      display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;
+      animation: fadeUp 0.8s 0.5s ease both;
+    }
+    .cover-stat {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+    .cover-stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--emas);
+      line-height: 1;
+    }
+    .cover-stat .label {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.65);
+      font-family: 'Space Mono', monospace;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.3rem;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 2rem; max-width: 960px; margin: 0 auto; }
+
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--hijau-light);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--hijau);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .section-divider {
+      width: 50px; height: 4px;
+      background: linear-gradient(90deg, var(--emas), var(--hijau-light));
+      border-radius: 2px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── LEMBAR PERSETUJUAN ── */
+    .persetujuan-box {
+      background: var(--putih);
+      border: 2px solid var(--hijau);
+      border-radius: 16px;
+      padding: 3rem;
+      position: relative;
+    }
+    .persetujuan-box::before {
+      content: '';
+      position: absolute;
+      top: 12px; right: 12px; bottom: 12px; left: 12px;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 10px;
+      pointer-events: none;
+    }
+    .ttd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+    .ttd-item { text-align: center; }
+    .ttd-label { font-size: 0.85rem; margin-bottom: 0.5rem; color: var(--teks-sekunder); }
+    .ttd-space { height: 80px; border-bottom: 1px solid #888; margin-bottom: 0.5rem; }
+    .ttd-nama { font-weight: 600; color: var(--hijau); }
+    .ttd-jabatan { font-size: 0.8rem; color: var(--teks-sekunder); }
+
+    /* ── KATA PENGANTAR ── */
+    .prose { color: var(--teks); font-size: 1rem; }
+    .prose p { margin-bottom: 1.25rem; text-align: justify; }
+    blockquote.hadits {
+      border-left: 4px solid var(--emas);
+      background: var(--krem-dark);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.5rem;
+      font-style: italic;
+      color: var(--hijau);
+      margin: 1.5rem 0;
+    }
+
+    /* ── INFO KEGIATAN ── */
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+    .info-card {
+      background: var(--putih);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-top: 4px solid var(--hijau-light);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .info-card .ic-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--teks-sekunder);
+      margin-bottom: 0.4rem;
+    }
+    .info-card .ic-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--hijau);
+    }
+
+    /* ── PROGRAM KEGIATAN TABLE ── */
+    .tbl-wrap { overflow-x: auto; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    table { width: 100%; border-collapse: collapse; background: var(--putih); }
+    thead th {
+      background: var(--hijau);
+      color: var(--putih);
+      padding: 0.85rem 1rem;
+      text-align: left;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    tbody tr:nth-child(even) { background: var(--krem); }
+    tbody td { padding: 0.75rem 1rem; font-size: 0.9rem; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    tbody tr:hover { background: rgba(82,183,136,0.08); }
+    .tag {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+    .tag-kebersihan { background: #d1fae5; color: #065f46; }
+    .tag-pendidikan { background: #dbeafe; color: #1e3a8a; }
+    .tag-pertanian  { background: #fef3c7; color: #92400e; }
+    .tag-sosial     { background: #ede9fe; color: #4c1d95; }
+    .tag-promosi    { background: #fce7f3; color: #831843; }
+    .tag-ibadah     { background: #e0f2fe; color: #075985; }
+
+    /* ── RINGKASAN SISWA ── */
+    .summary-accordion { display: flex; flex-direction: column; gap: 0.75rem; }
+    .acc-item {
+      background: var(--putih);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .acc-header {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1rem 1.25rem;
+      display: flex; align-items: center; gap: 1rem;
+      cursor: pointer;
+      text-align: left;
+    }
+    .acc-header:hover { background: rgba(82,183,136,0.05); }
+    .acc-avatar {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--hijau-mid), var(--hijau-light));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      color: white;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .acc-nama { font-weight: 600; color: var(--hijau); font-size: 0.95rem; }
+    .acc-jurusan { font-family: 'Space Mono', monospace; font-size: 0.68rem; color: var(--teks-sekunder); }
+    .acc-chevron { margin-left: auto; color: var(--hijau-light); font-size: 1.2rem; transition: transform 0.3s; }
+    .acc-item.open .acc-chevron { transform: rotate(180deg); }
+    .acc-body {
+      display: none;
+      padding: 0 1.25rem 1.25rem;
+    }
+    .acc-item.open .acc-body { display: block; }
+    .acc-row { display: grid; grid-template-columns: 130px 1fr; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-size: 0.88rem; }
+    .acc-row:last-child { border-bottom: none; }
+    .acc-row .place { color: var(--teks-sekunder); font-family: 'Space Mono', monospace; font-size: 0.75rem; }
+    .acc-row .manfaat { color: var(--teks); }
+
+    /* ── DOKUMENTASI / GALERI ── */
+    .foto-note {
+      background: linear-gradient(135deg, rgba(26,71,49,0.08), rgba(82,183,136,0.08));
+      border: 1.5px dashed var(--hijau-light);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .foto-note p { font-size: 0.9rem; color: var(--teks-sekunder); }
+    .foto-note a {
+      color: var(--hijau-mid);
+      font-weight: 600;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+    .galeri-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 1.25rem; }
+    .galeri-item {
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--putih);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .galeri-item:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    .galeri-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .galeri-img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      color: var(--hijau-mid);
+      font-size: 2.5rem;
+      position: relative;
+    }
+    .galeri-img-placeholder small {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      margin-top: 0.5rem;
+      opacity: 0.6;
+      position: absolute;
+      bottom: 0.75rem;
+    }
+    .galeri-caption {
+      padding: 0.75rem 1rem;
+      font-size: 0.82rem;
+      color: var(--teks-sekunder);
+      font-family: 'Source Serif 4', serif;
+      font-style: italic;
+    }
+
+    /* VIDEO EMBED */
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+    .video-card {
+      background: var(--putih);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    }
+    .video-card iframe, .video-card video {
+      width: 100%; aspect-ratio: 16/9;
+      display: block; border: none;
+    }
+    .video-caption {
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      color: var(--teks-sekunder);
+    }
+    .video-placeholder {
+      width: 100%; aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--hijau), var(--hijau-mid));
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      color: white; font-size: 2rem;
+      cursor: pointer;
+    }
+    .video-placeholder small {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      margin-top: 0.5rem;
+      opacity: 0.7;
+    }
+
+    /* ── PENUTUP ── */
+    .penutup-box {
+      background: linear-gradient(135deg, var(--hijau), var(--hijau-mid));
+      border-radius: 20px;
+      padding: 3rem;
+      color: white;
+      text-align: center;
+    }
+    .penutup-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--emas-light);
+    }
+    .penutup-box p { opacity: 0.85; max-width: 600px; margin: 0 auto 2rem; }
+    .ttd-penutup { display: flex; justify-content: flex-end; gap: 4rem; margin-top: 2rem; }
+    .ttd-penutup .item { text-align: center; color: rgba(255,255,255,0.85); }
+    .ttd-penutup .item .space { height: 64px; border-bottom: 1px solid rgba(255,255,255,0.4); margin-bottom: 0.4rem; }
+    .ttd-penutup .item .name { font-weight: 700; color: var(--emas-light); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--hijau);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 2rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+    }
+    footer span { color: var(--emas); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── PRINT HELPER ── */
+    @media print {
+      nav { display: none; }
+      section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <span class="brand">SMK Al Kaaffah · 2026</span>
+  <a href="#cover">Cover</a>
+  <a href="#persetujuan">Persetujuan</a>
+  <a href="#pengantar">Kata Pengantar</a>
+  <a href="#pendahuluan">Pendahuluan</a>
+  <a href="#pelaksanaan">Pelaksanaan</a>
+  <a href="#siswa">Rekapitulasi Siswa</a>
+  <a href="#dokumentasi">Dokumentasi</a>
+  <a href="#penutup">Penutup</a>
+</nav>
+
+<!-- ═══════════════ COVER ═══════════════ -->
+<section id="cover" style="max-width:100%; padding:0;">
+  <div id="cover">
+    <div class="cover-badge">📋 Laporan Pertanggungjawaban Kegiatan</div>
+    <p class="cover-instansi">Yayasan Pondok Pesantren Al Islamu Al Ainul Baahiroh</p>
+    <h1 class="cover-sekolah">SMK Al Kaaffah<br>Kepanjen</h1>
+    <p class="cover-tagline">Berkarakter · Berdaya · Berkontribusi</p>
+    <div class="cover-ornament"></div>
+    <h2 class="cover-judul">Laporan Pelaksanaan<br>Kegiatan Pengabdian Masyarakat<br>Siswa Kelas X</h2>
+    <p class="cover-lokasi">📍 Desa Wates, Kabupaten Blitar, Jawa Timur</p>
+    <p class="cover-tanggal">21 – 23 MEI 2026</p>
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <div class="num">19</div>
+        <div class="label">Siswa Peserta</div>
+      </div>
+      <div class="cover-stat">
+        <div class="num">3</div>
+        <div class="label">Hari Kegiatan</div>
+      </div>
+      <div class="cover-stat">
+        <div class="num">3</div>
+        <div class="label">Jurusan</div>
+      </div>
+      <div class="cover-stat">
+        <div class="num">5+</div>
+        <div class="label">Jenis Kegiatan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LEMBAR PERSETUJUAN ═══════════════ -->
+<section id="persetujuan">
+  <div class="section-label">Administrasi</div>
+  <h2 class="section-title">Lembar Persetujuan</h2>
+  <div class="section-divider"></div>
+
+  <div class="persetujuan-box">
+    <p style="text-align:center; font-size:0.9rem; margin-bottom:1.5rem; color:var(--teks-sekunder);">
+      Yang bertanda tangan di bawah ini menyatakan bahwa laporan kegiatan berikut telah diperiksa, disetujui, dan disahkan:
+    </p>
+    <table style="width:100%; border-collapse:collapse; font-size:0.9rem; background:none; box-shadow:none;">
+      <tbody>
+        <tr>
+          <td style="padding:0.5rem 0; color:var(--teks-sekunder); width:40%;">Nama Kegiatan</td>
+          <td style="padding:0.5rem 0;">: Pengabdian Masyarakat Siswa Kelas X</td>
+        </tr>
+        <tr>
+          <td style="padding:0.5rem 0; color:var(--teks-sekunder);">Lokasi</td>
+          <td style="padding:0.5rem 0;">: Desa Wates, Kabupaten Blitar</td>
+        </tr>
+        <tr>
+          <td style="padding:0.5rem 0; color:var(--teks-sekunder);">Waktu Pelaksanaan</td>
+          <td style="padding:0.5rem 0;">: 21 – 23 Mei 2026</td>
+        </tr>
+        <tr>
+          <td style="padding:0.5rem 0; color:var(--teks-sekunder);">Jumlah Peserta</td>
+          <td style="padding:0.5rem 0;">: 19 Siswa + 2 Guru Pendamping</td>
+        </tr>
+        <tr>
+          <td style="padding:0.5rem 0; color:var(--teks-sekunder);">Sumber Dana</td>
+          <td style="padding:0.5rem 0;">: Dana Sekolah</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="ttd-grid">
+      <div class="ttd-item">
+        <p class="ttd-label">Guru Pendamping</p>
+        <div class="ttd-space"></div>
+        <p class="ttd-nama">Fitri ...............</p>
+        <p class="ttd-jabatan">Guru Pendamping Perempuan</p>
+      </div>
+      <div class="ttd-item">
+        <p class="ttd-label">Guru Pendamping</p>
+        <div class="ttd-space"></div>
+        <p class="ttd-nama">Ibnu ...............</p>
+        <p class="ttd-jabatan">Guru Pendamping Laki-laki</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2.5rem;">
+      <p class="ttd-label">Mengetahui & Mengesahkan</p>
+      <p style="font-size:0.82rem; color:var(--teks-sekunder); margin-bottom:0.5rem;">Kepala SMK Al Kaaffah Kepanjen</p>
+      <div class="ttd-space" style="width:220px; margin:0 auto 0.5rem;"></div>
+      <p class="ttd-nama">................................................</p>
+      <p class="ttd-jabatan">Kepala Sekolah</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ KATA PENGANTAR ═══════════════ -->
+<section id="pengantar">
+  <div class="section-label">Sambutan</div>
+  <h2 class="section-title">Kata Pengantar</h2>
+  <div class="section-divider"></div>
+
+  <div class="prose">
+    <p>Bismillahirrahmanirrahim.<br>
+    Assalamu'alaikum warahmatullahi wabarakatuh.</p>
+
+    <blockquote class="hadits">
+      "Sebaik-baik manusia adalah yang paling bermanfaat bagi orang lain."
+      <br><em>(HR. Ahmad, Ath-Thabrani, Ad-Daruqutni)</em>
+    </blockquote>
+
+    <p>Alhamdulillah, puji syukur kehadirat Allah SWT atas rahmat dan karunia-Nya sehingga
+    kegiatan Pengabdian Masyarakat Siswa Kelas X SMK Al Kaaffah Kepanjen Tahun 2026 dapat
+    terlaksana dengan baik dan lancar. Shalawat serta salam semoga senantiasa tercurahkan
+    kepada Nabi Muhammad SAW, keluarga, para sahabat, dan seluruh umatnya.</p>
+
+    <p>Laporan ini disusun sebagai bentuk pertanggungjawaban atas terselenggaranya kegiatan
+    Pengabdian Masyarakat yang dilaksanakan di Desa Wates, Kabupaten Blitar, pada tanggal
+    21 hingga 23 Mei 2026. Kegiatan ini melibatkan 19 siswa dari tiga jurusan — Teknik Kendaraan
+    Ringan (TKR), Teknik Komputer dan Jaringan (TKJ), serta Teknik Audio Video (TAV) — yang
+    didampingi oleh 2 orang guru pendamping.</p>
+
+    <p>Melalui program pengabdian ini, para siswa tidak sekadar menjalankan kewajiban akademis,
+    melainkan sungguh-sungguh terlibat dalam kehidupan masyarakat Desa Wates. Mereka membersihkan
+    masjid dan mushola, mengajar ngaji di TPQ, membantu petani melon di <em>green house</em>, bersosialisasi
+    ke SMP dalam rangka promosi sekolah, serta mengikuti kegiatan istighosah dan tahlil bersama
+    warga. Setiap kegiatan mengandung nilai pembelajaran yang nyata dan tidak ternilai.</p>
+
+    <p>Kami mengucapkan terima kasih yang sebesar-besarnya kepada masyarakat Desa Wates atas
+    sambutan dan kerjasamanya, kepada bapak/ibu guru yang telah membimbing dengan penuh
+    dedikasi, dan kepada seluruh siswa yang telah menunjukkan semangat, keberanian, dan
+    kepedulian yang luar biasa selama tiga hari penuh.</p>
+
+    <p>Kami menyadari bahwa laporan ini masih jauh dari sempurna. Oleh karena itu, segala
+    masukan dan kritik yang membangun sangat kami harapkan demi penyempurnaan ke depan.
+    Semoga kegiatan ini memberikan manfaat yang nyata bagi masyarakat dan menjadi
+    pengalaman berharga yang tidak terlupakan bagi para siswa.</p>
+
+    <p>Wassalamu'alaikum warahmatullahi wabarakatuh.</p>
+
+    <p style="text-align:right; margin-top:1.5rem;">
+      Kepanjen, Mei 2026<br>
+      <strong style="color:var(--hijau);">SMK Al Kaaffah Kepanjen</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════ PENDAHULUAN ═══════════════ -->
+<section id="pendahuluan">
+  <div class="section-label">Bab I</div>
+  <h2 class="section-title">Pendahuluan</h2>
+  <div class="section-divider"></div>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--hijau); margin-bottom:0.75rem; font-size:1.2rem;">A. Latar Belakang</h3>
+  <div class="prose">
+    <p>Pengabdian masyarakat merupakan salah satu pilar penting dalam pembentukan karakter siswa
+    SMK Al Kaaffah Kepanjen. Program ini dirancang sebagai wahana nyata bagi siswa untuk
+    menerapkan pengetahuan dan keterampilan yang telah diperoleh di bangku sekolah ke dalam
+    konteks kehidupan sosial masyarakat yang sesungguhnya.</p>
+
+    <p>Sebagai lembaga pendidikan yang berada di bawah naungan Yayasan Pondok Pesantren Al Islamu
+    Al Ainul Baahiroh, SMK Al Kaaffah Kepanjen tidak hanya berupaya mencetak lulusan yang
+    kompeten secara teknis, tetapi juga siswa yang berjiwa sosial tinggi, berakhlak mulia, dan
+    mampu memberikan kontribusi nyata bagi lingkungan sekitarnya.</p>
+
+    <p>Program pengabdian masyarakat terdiri dari tiga tahapan utama: <strong>pembekalan</strong>,
+    <strong>kegiatan lapangan</strong>, dan <strong>pelaporan</strong>. Melalui ketiga tahapan ini,
+    siswa diharapkan mampu mengembangkan kecakapan interpersonal, kemampuan analisis situasi sosial,
+    serta sikap gotong royong dan kepedulian terhadap sesama.</p>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--hijau); margin:2rem 0 0.75rem; font-size:1.2rem;">B. Tujuan Kegiatan</h3>
+  <div class="prose">
+    <p><strong>Tujuan Umum:</strong> Memberikan wawasan dan pengalaman langsung kepada siswa dalam menerapkan ilmu pengetahuan untuk mengembangkan potensi masyarakat desa.</p>
+    <p><strong>Tujuan Khusus:</strong></p>
+    <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+      <li>Melatih kemampuan interaksi sosial siswa dengan masyarakat</li>
+      <li>Mengembangkan kemampuan observasi dan analisis di lapangan</li>
+      <li>Menumbuhkan jiwa kepedulian dan tanggung jawab sosial</li>
+      <li>Mengamalkan ilmu agama dalam kehidupan bermasyarakat</li>
+      <li>Membantu memecahkan persoalan nyata yang dihadapi masyarakat desa</li>
+    </ul>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--hijau); margin:2rem 0 0.75rem; font-size:1.2rem;">C. Manfaat Kegiatan</h3>
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="ic-label">🎓 Bagi Siswa</div>
+      <div class="ic-val" style="font-size:0.9rem; font-family:'Source Serif 4',serif; font-weight:400; margin-top:0.5rem;">
+        Pendewasaan karakter, pengembangan keterampilan sosial, dan perluasan wawasan dunia nyata di luar kelas
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="ic-label">🏫 Bagi Sekolah</div>
+      <div class="ic-val" style="font-size:0.9rem; font-family:'Source Serif 4',serif; font-weight:400; margin-top:0.5rem;">
+        Meningkatkan partisipasi SMK dalam pembangunan sosial serta memperluas jaringan dengan masyarakat dan pemerintah daerah
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="ic-label">🏡 Bagi Masyarakat</div>
+      <div class="ic-val" style="font-size:0.9rem; font-family:'Source Serif 4',serif; font-weight:400; margin-top:0.5rem;">
+        Mendapat bantuan tenaga dan gagasan segar dari generasi muda yang terampil dan berenergi
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PELAKSANAAN ═══════════════ -->
+<section id="pelaksanaan">
+  <div class="section-label">Bab II</div>
+  <h2 class="section-title">Pelaksanaan Kegiatan</h2>
+  <div class="section-divider"></div>
+
+  <div class="info-grid" style="margin-bottom:2.5rem;">
+    <div class="info-card">
+      <div class="ic-label">📅 Tanggal</div>
+      <div class="ic-val">21 – 23 Mei 2026</div>
+    </div>
+    <div class="info-card">
+      <div class="ic-label">📍 Lokasi</div>
+      <div class="ic-val">Desa Wates, Kab. Blitar</div>
+    </div>
+    <div class="info-card">
+      <div class="ic-label">👥 Peserta</div>
+      <div class="ic-val">19 Siswa + 2 Guru</div>
+    </div>
+    <div class="info-card">
+      <div class="ic-label">💰 Dana</div>
+      <div class="ic-val">Dana Sekolah</div>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--hijau); margin-bottom:1rem; font-size:1.2rem;">Jadwal & Program Harian</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Hari</th>
+          <th>Waktu</th>
+          <th>Kegiatan</th>
+          <th>Kategori</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td rowspan="7" style="font-weight:700;color:var(--hijau);vertical-align:top;padding-top:1rem;">Hari 1<br><small style="font-weight:400;color:#888;">21 Mei</small></td><td>07.00 – 09.00</td><td>Persiapan & perjalanan dari sekolah</td><td>–</td></tr>
+        <tr><td>09.00 – 09.30</td><td>Tiba di lokasi & Apel pembukaan</td><td><span class="tag tag-ibadah">Ibadah</span></td></tr>
+        <tr><td>09.30 – 10.00</td><td>Pembagian kelompok dan jobdesk</td><td>–</td></tr>
+        <tr><td>10.00 – 12.00</td><td>Kegiatan lapangan (kebersihan rumah & lingkungan)</td><td><span class="tag tag-kebersihan">Kebersihan</span></td></tr>
+        <tr><td>12.00 – 18.00</td><td>Kegiatan pengabdian lanjutan (masjid/mushola)</td><td><span class="tag tag-kebersihan">Kebersihan</span></td></tr>
+        <tr><td>18.00 – 19.00</td><td>Istirahat, Maghrib dan Isya berjamaah</td><td><span class="tag tag-ibadah">Ibadah</span></td></tr>
+        <tr><td>19.00 – 20.00</td><td>Istighosah & tahlil di rumah warga</td><td><span class="tag tag-sosial">Sosial</span></td></tr>
+
+        <tr><td rowspan="8" style="font-weight:700;color:var(--hijau);vertical-align:top;padding-top:1rem;">Hari 2<br><small style="font-weight:400;color:#888;">22 Mei</small></td><td>03.30 – 05.00</td><td>Sholat Subuh berjamaah di masjid</td><td><span class="tag tag-ibadah">Ibadah</span></td></tr>
+        <tr><td>05.00 – 06.00</td><td>Olahraga pagi / senam</td><td>–</td></tr>
+        <tr><td>06.00 – 07.30</td><td>Bersih diri & makan pagi</td><td>–</td></tr>
+        <tr><td>07.30 – 11.00</td><td>Kebersihan masjid & mushola (sapu, pel, kaca, sajadah)</td><td><span class="tag tag-kebersihan">Kebersihan</span></td></tr>
+        <tr><td>07.30 – 11.00</td><td>Sosialisasi / presentasi ke SMPN 2 Wates (promosi sekolah)</td><td><span class="tag tag-promosi">Promosi</span></td></tr>
+        <tr><td>07.30 – 11.00</td><td>Mengajar ngaji di TPQ & mushola</td><td><span class="tag tag-pendidikan">Pendidikan</span></td></tr>
+        <tr><td>11.30 – 13.00</td><td>Istirahat & Sholat Jumat</td><td><span class="tag tag-ibadah">Ibadah</span></td></tr>
+        <tr><td>19.00 – 20.00</td><td>Istighotsah malam bersama warga</td><td><span class="tag tag-sosial">Sosial</span></td></tr>
+
+        <tr><td rowspan="5" style="font-weight:700;color:var(--hijau);vertical-align:top;padding-top:1rem;">Hari 3<br><small style="font-weight:400;color:#888;">23 Mei</small></td><td>03.30 – 05.00</td><td>Sholat Subuh berjamaah</td><td><span class="tag tag-ibadah">Ibadah</span></td></tr>
+        <tr><td>05.00 – 07.00</td><td>Olahraga pagi & bersih diri</td><td>–</td></tr>
+        <tr><td>07.30 – 11.30</td><td>Kegiatan di Green House Pak Imam (menanam bibit melon)</td><td><span class="tag tag-pertanian">Pertanian</span></td></tr>
+        <tr><td>11.30 – 13.00</td><td>Istirahat siang & bersih-bersih rumah tempat tinggal</td><td><span class="tag tag-kebersihan">Kebersihan</span></td></tr>
+        <tr><td>13.00 – 14.00</td><td>Persiapan & perjalanan pulang ke Kepanjen</td><td>–</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--hijau); margin:2.5rem 0 1rem; font-size:1.2rem;">Daftar Peserta</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>No</th><th>Nama Siswa</th><th>Jurusan</th><th>Jenis Kelamin</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>M. Albit (Muhammad Albith Ibnu Choirillah)</td><td>X TKR</td><td>L</td></tr>
+        <tr><td>2</td><td>Ach. Saiful (A. Saiful Sodiq)</td><td>X TKJ</td><td>L</td></tr>
+        <tr><td>3</td><td>Faris Leo Ardi (Faris Leo Ardiyono)</td><td>X TKR</td><td>L</td></tr>
+        <tr><td>4</td><td>Farhan Faiz L.H</td><td>X TKR</td><td>L</td></tr>
+        <tr><td>5</td><td>M. Nur Rohmadtulloh (Muhammad Nur Rahmadtulloh)</td><td>X TKR</td><td>L</td></tr>
+        <tr><td>6</td><td>Langlang Rafique</td><td>X TKJ</td><td>L</td></tr>
+        <tr><td>7</td><td>Herman (Herman Kasman)</td><td>X TKJ</td><td>L</td></tr>
+        <tr><td>8</td><td>M. Hisyam (Muhammad Hisyam)</td><td>X TAV</td><td>L</td></tr>
+        <tr><td>9</td><td>A. Musriadi</td><td>X TKJ</td><td>L</td></tr>
+        <tr><td>10</td><td>Arnel Arshavin</td><td>X TKR</td><td>L</td></tr>
+        <tr><td>11</td><td>Jevry Nurdiansyah (Jefri Nurdiansyah)</td><td>X TAV</td><td>L</td></tr>
+        <tr><td>12</td><td>Hermansyah Prasetyo Fernando</td><td>X TKJ</td><td>L</td></tr>
+        <tr><td>13</td><td>Sayidati Amaliani</td><td>X TAV</td><td>P</td></tr>
+        <tr><td>14</td><td>Balqis Nur Abidah</td><td>X TKJ</td><td>P</td></tr>
+        <tr><td>15</td><td>Satria Maulana</td><td>X TKR</td><td>L</td></tr>
+        <tr><td>16</td><td>Izam Taqiyudin (Ilzam Taqiyuddin)</td><td>X TKR</td><td>L</td></tr>
+        <tr><td>17</td><td>M. Firzan (Muhammad Firzan Rizal P.)</td><td>X TKR</td><td>L</td></tr>
+        <tr><td>18</td><td>Khodijah Khoirotuz (Khodijah Khoirotuz Zuhriyyah)</td><td>X TKJ</td><td>P</td></tr>
+        <tr><td>19</td><td>Mohammad Amirul Mukminin (M. Amirul Mukminin)</td><td>X TKJ</td><td>L</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════ REKAPITULASI SISWA ═══════════════ -->
+<section id="siswa">
+  <div class="section-label">Bab III</div>
+  <h2 class="section-title">Rekapitulasi Hasil Lembar Kerja Siswa</h2>
+  <div class="section-divider"></div>
+
+  <div class="prose" style="margin-bottom:2rem;">
+    <p>Berikut adalah ringkasan hasil lembar kerja (jobsheet) pengabdian dari setiap siswa yang mencatat tempat, tanggal, dan manfaat kegiatan yang mereka rasakan selama tiga hari pengabdian. Data ini merupakan rekap jujur dan lengkap dari tulisan tangan siswa.</p>
+  </div>
+
+  <!-- TABEL RINGKASAN KESELURUHAN -->
+  <h3 style="font-family:'Playfair Display',serif; color:var(--hijau); margin-bottom:1rem; font-size:1.2rem;">Tabel Ringkasan Kegiatan Seluruh Siswa</h3>
+  <div class="tbl-wrap" style="margin-bottom:3rem;">
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama Siswa</th>
+          <th>Jurusan</th>
+          <th>21 Mei 2026</th>
+          <th>22 Mei 2026</th>
+          <th>23 Mei 2026</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Khodijah Khoirotuz Z.</td><td>X TKJ</td>
+          <td>Mengajar ngaji (TPQ) di Masjid — berbagi ilmu &amp; latihan public speaking</td>
+          <td>Presentasi ke SMP (public speaking) + mengajar TPQ di Musholah</td>
+          <td>Belajar menanam melon di Green House — memahami proses pertanian</td></tr>
+        <tr><td>2</td><td>M. Albit (Albith I.C.)</td><td>X TKR</td>
+          <td>Membersihkan rumah + apel pembukaan</td>
+          <td>Mengajar mengaji anak-anak di Masjid &amp; membersihkan masjid sebelum Jumat</td>
+          <td>Membersihkan rumah tempat tinggal (datang bersih pulang bersih)</td></tr>
+        <tr><td>3</td><td>M. Amirul Mukminin</td><td>X TKJ</td>
+          <td>Ngajar ngaji &amp; tahlil di masjid dan rumah warga</td>
+          <td>Istighosah di rumah Pak Iwan + membersihkan Masjid</td>
+          <td>Bersih-bersih Green House / lingkungan sekitar</td></tr>
+        <tr><td>4</td><td>Farhan Faiz L.H</td><td>X TKR</td>
+          <td>Membersihkan rumah tempat tinggal</td>
+          <td>Membersihkan masjid sebelum Sholat Jumat</td>
+          <td>Membersihkan rumah sebelum pulang</td></tr>
+        <tr><td>5</td><td>Balqis Nur Abidah</td><td>X TKJ</td>
+          <td>Mengajar ngaji anak-anak di Masjid — belajar sabar &amp; tersenyum</td>
+          <td>Menjaga kebersihan masjid dan sekitarnya</td>
+          <td>Membersihkan rumah untuk kenyamanan</td></tr>
+        <tr><td>6</td><td>Faris Leo Ardiyono</td><td>X TKR</td>
+          <td>Membersihkan rumah &amp; halaman belakang</td>
+          <td>Senam pagi → ke warga → bersih masjid → mengajar ngaji</td>
+          <td>Membersihkan rumah setelah dipakai 2 hari</td></tr>
+        <tr><td>7</td><td>Arnel Arshavin</td><td>X TKR</td>
+          <td>Membersihkan teras &amp; lingkungan Masjid Al Hikmah Sukoharjo</td>
+          <td>Sosialisasi ke SMPN 2 Wates bersama Bu Fitri, Pak Ibnu, Ria, Langlang</td>
+          <td>Menanam kembali bibit melon di Green House Pak Imam</td></tr>
+        <tr><td>8</td><td>A. Saiful Sodiq</td><td>X TKJ</td>
+          <td>Membersihkan lingkungan tempat tinggal di Blitar</td>
+          <td>Membersihkan masjid (tempat wudhu, kaca, sajadah, pel)</td>
+          <td>Bersih-bersih rumah &amp; kegiatan Green House</td></tr>
+        <tr><td>9</td><td>Jefri Nurdiansyah</td><td>X TAV</td>
+          <td>Menyapu halaman masjid &amp; memindahkan material semen</td>
+          <td>Senam pagi + mencabut tanaman kering di masjid + istighosah</td>
+          <td>Lari pagi → main bola → menanam biji melon di kebun</td></tr>
+        <tr><td>10</td><td>M. Firzan Rizal P.</td><td>X TKR</td>
+          <td>Tahlil di Masjid &amp; rumah warga — mengharap syafaat Nabi SAW</td>
+          <td>Mengajar ngaji di TPQ</td>
+          <td>Membantu pertanian melon di Green House — pangan sehat bergizi</td></tr>
+        <tr><td>11</td><td>Herman Kasman</td><td>X TKJ</td>
+          <td>Membersihkan Mushola — menciptakan kenyamanan ibadah</td>
+          <td>Membersihkan Masjid Baitunnashir — keindahan &amp; kenyamanan jamaah</td>
+          <td>Membantu pertanian melon di sebelah rumah Pak Imam</td></tr>
+        <tr><td>12</td><td>A. Musriadi</td><td>X TKJ</td>
+          <td>Membersihkan Mushola</td>
+          <td>Bersih-bersih Masjid &amp; Mushola + istighosah (mendoakan orang tua)</td>
+          <td>Belajar menanam melon di Kebun Pak Imam</td></tr>
+        <tr><td>13</td><td>Muhammad Hisyam</td><td>X TAV</td>
+          <td>Membersihkan rumah, memotong rumput, menyapu sarang laba-laba</td>
+          <td>Membersihkan tempat wudhu, WC, &amp; teras Masjid + bersih rumah pasca Jumat</td>
+          <td>Lari pagi → main bola → menanam bambu &amp; melon di Green House</td></tr>
+        <tr><td>14</td><td>M. Nur Rahmadtulloh</td><td>X TKR</td>
+          <td>Membersihkan rumah (sapu, pel)</td>
+          <td>Membersihkan masjid &amp; kamar mandi masjid</td>
+          <td>Membersihkan rumah tempat tinggal secara menyeluruh</td></tr>
+        <tr><td>15</td><td>Hermansyah Prasetyo F.</td><td>X TKJ</td>
+          <td>Membersihkan rumah — nyaman untuk istirahat</td>
+          <td>Membersihkan Masjid — gotong royong &amp; kepedulian</td>
+          <td>Belajar menanam buah melon di Green House</td></tr>
+        <tr><td>16</td><td>Sayidati Amaliani</td><td>X TAV</td>
+          <td>Menyapu rumah pengabdian agar bersih dan nyaman</td>
+          <td>Membersihkan Musholah &amp; kamar mandi + membersihkan Masjid (kelompok)</td>
+          <td>Membersihkan rumah pengabdian untuk persiapan pulang</td></tr>
+        <tr><td>17</td><td>Ilzam Taqiyuddin</td><td>X TKR</td>
+          <td>Membersihkan lingkungan Mushola — menjaga kesucian tempat ibadah</td>
+          <td>Gotong royong bersih masjid + istighosah (menenangkan hati &amp; pikiran)</td>
+          <td>Belajar menanam melon &amp; meringankan beban petani</td></tr>
+        <tr><td>18</td><td>Satria Maulana</td><td>X TKR</td>
+          <td>Membersihkan Mushola — kepedulian &amp; tanggung jawab tempat ibadah</td>
+          <td>Gotong royong bersih Masjid — menumbuhkan kepedulian &amp; kerapihan</td>
+          <td>Belajar menanam buah melon</td></tr>
+        <tr><td>19</td><td>Langlang Rafique</td><td>X TKJ</td>
+          <td>Presentasi sekolah / sosialisasi ke SMP</td>
+          <td>Presentasi SPMB + mengajar ngaji di Musholah (silaturrahmi dengan santri PP Mamba'us Sholihin)</td>
+          <td>Green House Pak Imam — mengenal budaya bertani</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ACCORDION PER SISWA -->
+  <h3 style="font-family:'Playfair Display',serif; color:var(--hijau); margin-bottom:1rem; font-size:1.2rem;">Detail Lembar Kerja Per Siswa</h3>
+  <div class="summary-accordion" id="accordion">
+
+    <!-- KHODIJAH -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">KH</div>
+        <div><div class="acc-nama">Khodijah Khoirotuz Zuhriyyah</div><div class="acc-jurusan">X TKJ · Perempuan</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Masjid</span><span class="manfaat">Mengajari anak-anak cara mengaji, menulis, dan menghafal surat pendek & bacaan sholat di TPQ. Dapat berbagi ilmu, melatih public speaking, dan cara berkomunikasi.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Sekolah (SMPN 2 Wates)</span><span class="manfaat">Presentasi ke sekolah SMP bersama guru. Belajar bahwa komunikasi yang baik sangat penting — melatih skill public speaking dan mental.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Musholah</span><span class="manfaat">Mengajar di TPQ. Mendapatkan momen yang sangat berharga bersama anak-anak.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Green House</span><span class="manfaat">Belajar menanam buah melon. Memahami bahwa proses pertanian sangat panjang dan rumit, serta menghargai pekerjaan petani.</span></div>
+      </div>
+    </div>
+
+    <!-- ALBIT -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">MA</div>
+        <div><div class="acc-nama">Muhammad Albith Ibnu Choirillah</div><div class="acc-jurusan">X TKR · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Rumah</span><span class="manfaat">Membersihkan rumah, apel pembukaan, makan, dan ISOMA. Melatih kebersihan.</span></div>
+        <div class="acc-row"><span class="place">21 Mei · Rumah Pak Sukri</span><span class="manfaat">Rutinan yasin dan tahlil — melaksanakan keutamaan malam Jumat.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Masjid</span><span class="manfaat">Mengajar anak-anak mengaji dan membersihkan masjid sebelum sholat jamaah.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Rumah</span><span class="manfaat">Membersihkan rumah tempat tinggal — datang bersih pulang bersih.</span></div>
+      </div>
+    </div>
+
+    <!-- AMIRUL -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">AM</div>
+        <div><div class="acc-nama">M. Amirul Mukminin</div><div class="acc-jurusan">X TKJ · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Masjid</span><span class="manfaat">Ngajar ngaji dan pembacaan tahlil di masjid dan rumah warga. Berbagi ilmu sebagai shodaqoh.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Rumah Pak Iwan</span><span class="manfaat">Istighosah bersama warga, wirid bersama, kemudian diberi makan dan minum oleh tuan rumah.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Masjid</span><span class="manfaat">Membersihkan Masjid. Meyakini bahwa membersihkan masjid seperti membangun rumah di surga.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Green House</span><span class="manfaat">Bersih-bersih lingkungan green house agar terlihat rapih dan bersih.</span></div>
+      </div>
+    </div>
+
+    <!-- FARHAN -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">FF</div>
+        <div><div class="acc-nama">Farhan Faiz L.H</div><div class="acc-jurusan">X TKR · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Rumah</span><span class="manfaat">Membersihkan rumah tempat tinggal bersama teman-teman agar lebih nyaman.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Masjid</span><span class="manfaat">Membersihkan masjid sebelum sholat Jumat supaya terlihat bersih dan rapih.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Rumah</span><span class="manfaat">Membersihkan rumah sebelum ditinggalkan — tanggung jawab terhadap tempat yang telah digunakan.</span></div>
+      </div>
+    </div>
+
+    <!-- BALQIS -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">BN</div>
+        <div><div class="acc-nama">Balqis Nur Abidah</div><div class="acc-jurusan">X TKJ · Perempuan</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Masjid</span><span class="manfaat">Mengajar ngaji anak-anak. Belajar sabar, berbagi ilmu, dan bahwa senyum kepada orang asing itu perlu.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Masjid</span><span class="manfaat">Menjaga kebersihan masjid dan sekitarnya agar ibadah terasa nyaman dan rapih.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Rumah</span><span class="manfaat">Membersihkan rumah agar terasa nyaman dan bersih.</span></div>
+      </div>
+    </div>
+
+    <!-- FARIS -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">FL</div>
+        <div><div class="acc-nama">Faris Leo Ardiyono</div><div class="acc-jurusan">X TKR · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Rumah</span><span class="manfaat">Membersihkan rumah dan halaman belakang agar enak dipandang.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Rumah & Masjid</span><span class="manfaat">Senam pagi → ke warga → bersih-bersih masjid → sholat → mengajar ngaji. Serangkaian kegiatan penuh dari pagi hingga sore.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Rumah</span><span class="manfaat">Membersihkan rumah yang telah dipakai selama 2 hari sebelum pulang.</span></div>
+      </div>
+    </div>
+
+    <!-- ARNEL -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">AR</div>
+        <div><div class="acc-nama">Arnel Arshavin</div><div class="acc-jurusan">X TKR · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Masjid Al Hikmah Sukoharjo</span><span class="manfaat">Membersihkan teras masjid (sapu, pel) dan lingkungan sekitar bersama 6 rekan. Beribadah dengan nyaman.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · SMPN 2 Wates</span><span class="manfaat">Sosialisasi ke siswa SMP kelas 9 untuk memperkenalkan SMK Al Kaaffah bersama Bu Fitri, Pak Ibnu, Ria, dan Langlang selama 1 jam.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Green House Pak Imam</span><span class="manfaat">Menanam kembali bibit melon di kebun Pak Imam — membantu dan memudahkan petani.</span></div>
+      </div>
+    </div>
+
+    <!-- SAIFUL -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">AS</div>
+        <div><div class="acc-nama">A. Saiful Sodiq</div><div class="acc-jurusan">X TKJ · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Blitar</span><span class="manfaat">Membersihkan lingkungan agar bersih, nyaman untuk ditempati.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Masjid</span><span class="manfaat">Membersihkan masjid: tempat cuci kaki, mengepel, mengelap kaca, membersihkan sajadah.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Rumah & Green House</span><span class="manfaat">Membersihkan rumah — memahami betapa pentingnya kebersihan untuk kenyamanan. Juga kegiatan di Green House.</span></div>
+      </div>
+    </div>
+
+    <!-- JEFRI -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">JN</div>
+        <div><div class="acc-nama">Jefri Nurdiansyah</div><div class="acc-jurusan">X TAV · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Masjid</span><span class="manfaat">Menyapu halaman masjid dan memindahkan material semen ke sudut untuk area sholat.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Masjid</span><span class="manfaat">Senam pagi, mencabut tanaman kering di lingkungan masjid, istighosah. "Kebersihan adalah sebagian dari iman."</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Rumah & Kebun</span><span class="manfaat">Lari pagi → main bola → menanam biji melon. Belajar menanam sebagai pengalaman baru.</span></div>
+      </div>
+    </div>
+
+    <!-- FIRZAN -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">MF</div>
+        <div><div class="acc-nama">Muhammad Firzan Rizal P.</div><div class="acc-jurusan">X TKR · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Masjid & Rumah Warga</span><span class="manfaat">Tahlil di rumah warga — mengharap syafaat Nabi Muhammad SAW.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · TPQ</span><span class="manfaat">Mengajar ngaji — mendapatkan pahala dan ilmu baru.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Green House</span><span class="manfaat">Membantu pertanian melon. Masyarakat dapat memperoleh makanan sehat dan bergizi.</span></div>
+      </div>
+    </div>
+
+    <!-- HERMAN -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">HK</div>
+        <div><div class="acc-nama">Herman Kasman</div><div class="acc-jurusan">X TKJ · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Mushola</span><span class="manfaat">Membersihkan mushola agar jamaah nyaman, mengurangi risiko penyakit dari debu dan sampah.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Masjid Baitunnashir</span><span class="manfaat">Masjid bersih terlihat indah dan rapih — setiap jamaah yang datang merasa nyaman.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Green House</span><span class="manfaat">Membantu pertanian melon — masyarakat memperoleh makanan yang sehat dan bergizi.</span></div>
+      </div>
+    </div>
+
+    <!-- MUSRIADI -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">MU</div>
+        <div><div class="acc-nama">A. Musriadi</div><div class="acc-jurusan">X TKJ · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Mushola</span><span class="manfaat">Membersihkan mushola — lingkungan jadi bersih dan nyaman, tidak merasa kotor saat digunakan.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Masjid & Mushola</span><span class="manfaat">Gotong royong bersih-bersih + istighosah untuk mendoakan orang tua. Menumbuhkan kerjasama tim.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Kebun Pak Imam</span><span class="manfaat">Belajar menanam melon. Mendapat pengalaman seberapa berat perjuangan orang tua sebagai petani.</span></div>
+      </div>
+    </div>
+
+    <!-- HISYAM -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">MH</div>
+        <div><div class="acc-nama">Muhammad Hisyam</div><div class="acc-jurusan">X TAV · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Rumah</span><span class="manfaat">Membersihkan rumah, memotong rumput, menyapu sarang laba-laba agar rumah terlihat bersih.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Masjid & Rumah</span><span class="manfaat">Membersihkan tempat wudhu, WC, dan teras masjid → sholat Jumat → bersih rumah. "Kebersihan adalah sebagian dari iman."</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Green House</span><span class="manfaat">Lari pagi → main bola → melubangi plastik, menanam batang bambu di Green House. Belajar menjadi petani.</span></div>
+      </div>
+    </div>
+
+    <!-- NUR ROHMAD -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">NR</div>
+        <div><div class="acc-nama">Muhammad Nur Rahmadtulloh</div><div class="acc-jurusan">X TKR · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Rumah</span><span class="manfaat">Membersihkan rumah (sapu, pel) — rumah menjadi bersih, rapih, dan tampilan menjadi baik.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Rumah & Masjid</span><span class="manfaat">Membersihkan masjid dan kamar mandi masjid secara keseluruhan.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Rumah Tempat Tinggal</span><span class="manfaat">Membersihkan dalam rumah: sapu, pel, dan lain-lain agar bersih dan tidak kotor sebelum pulang.</span></div>
+      </div>
+    </div>
+
+    <!-- HERMANSYAH -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">HP</div>
+        <div><div class="acc-nama">Hermansyah Prasetyo Fernando</div><div class="acc-jurusan">X TKJ · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Rumah</span><span class="manfaat">Membersihkan rumah — membuat nyaman, tenang, dan enak untuk istirahat.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Masjid</span><span class="manfaat">Menumbuhkan sikap saling peduli dan gotong royong — masjid terlihat rapih dan nyaman.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Green House</span><span class="manfaat">Belajar menanam buah melon agar bisa menanam sendiri.</span></div>
+      </div>
+    </div>
+
+    <!-- SAYIDATI -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">SA</div>
+        <div><div class="acc-nama">Sayidati Amaliani</div><div class="acc-jurusan">X TAV · Perempuan</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Rumah Pengabdian</span><span class="manfaat">Menyapu rumah agar terlihat bersih dan nyaman untuk istirahat.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Musholah</span><span class="manfaat">Membersihkan mushola dan kamar mandi. Banyak momen berharga bersama kelompok, komunikasi yang baik.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Masjid</span><span class="manfaat">Membersihkan masjid agar lebih pantas dipandang dan nyaman untuk sholat.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Rumah Pengabdian</span><span class="manfaat">Membersihkan rumah untuk persiapan pulang — tinggal pulang tanpa perlu banyak bersih-bersih lagi.</span></div>
+      </div>
+    </div>
+
+    <!-- ILZAM -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">IT</div>
+        <div><div class="acc-nama">Ilzam Taqiyuddin</div><div class="acc-jurusan">X TKR · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Mushola</span><span class="manfaat">Membersihkan lingkungan mushola — menjaga kesucian tempat ibadah, kebersihan adalah bagian penting ibadah.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Masjid</span><span class="manfaat">Gotong royong kebersihan masjid + istighosah — menumbuhkan kepedulian, menenangkan hati dan pikiran.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Green House</span><span class="manfaat">Belajar menanam melon dan meringankan beban petani dalam proses penanaman.</span></div>
+      </div>
+    </div>
+
+    <!-- SATRIA -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">SM</div>
+        <div><div class="acc-nama">Satria Maulana</div><div class="acc-jurusan">X TKR · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · Mushola</span><span class="manfaat">Membersihkan mushola — mendapat pahala, menumbuhkan rasa tanggung jawab terhadap tempat ibadah.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · Masjid</span><span class="manfaat">Gotong royong bersih masjid — menumbuhkan sikap saling peduli, masjid terlihat rapih dan bersih.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Green House</span><span class="manfaat">Belajar menanam buah melon agar bisa menanam sendiri.</span></div>
+      </div>
+    </div>
+
+    <!-- LANGLANG -->
+    <div class="acc-item">
+      <button class="acc-header" onclick="toggle(this)">
+        <div class="acc-avatar">LR</div>
+        <div><div class="acc-nama">Langlang Rafique</div><div class="acc-jurusan">X TKJ · Laki-laki</div></div>
+        <span class="acc-chevron">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-row"><span class="place">21 Mei · SMPN 2 Wates</span><span class="manfaat">Presentasi sekolah — bermanfaat untuk melatih public speaking.</span></div>
+        <div class="acc-row"><span class="place">22 Mei · SMPN 2 Wates & Mushola</span><span class="manfaat">Presentasi SPMB + mengajar ngaji di musholah untuk sharing ilmu dan silaturrahmi dengan santri PP Mamba'us Sholihin yang sedang PKL.</span></div>
+        <div class="acc-row"><span class="place">23 Mei · Green House Pak Imam</span><span class="manfaat">Melatih diri dan mendapat gambaran nyata tentang budaya bertani masyarakat setempat.</span></div>
+      </div>
+    </div>
+
+  </div><!-- end accordion -->
+</section>
+
+<!-- ═══════════════ DOKUMENTASI ═══════════════ -->
+<section id="dokumentasi">
+  <div class="section-label">Bab IV</div>
+  <h2 class="section-title">Dokumentasi Kegiatan</h2>
+  <div class="section-divider"></div>
+
+  <div class="foto-note">
+    <p>📁 Seluruh dokumentasi foto dan video kegiatan tersedia di Google Drive:</p>
+    <p style="margin-top:0.5rem;"><a href="https://drive.google.com/drive/folders/1dQ1e-Tsv5a1MmtpIMiE1MFT9ff2_d52G" target="_blank">https://drive.google.com/drive/folders/1dQ1e-Tsv5a1MmtpIMiE1MFT9ff2_d52G</a></p>
+    <p style="margin-top:0.75rem; font-size:0.8rem;">💡 <em>Untuk menambah foto: ganti URL pada tag &lt;img src="..."&gt; dengan link foto Google Drive (pastikan akses publik: Anyone with the link → Viewer).</em></p>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif; color:var(--hijau); margin-bottom:1rem; font-size:1.2rem;">📸 Galeri Foto</h3>
+  <p style="margin-bottom:1.5rem; color:var(--teks-sekunder); font-size:0.9rem;">
+    Ganti <code>GANTI_DENGAN_ID_FILE</code> dengan ID file dari Google Drive (format: <code>https://drive.google.com/uc?export=view&id=FILE_ID</code>)
+  </p>
+
+  <div class="galeri-grid">
+    <!-- Foto Hari 1 -->
+    <div class="galeri-item">
+      <div class="galeri-img-placeholder">🕌<small>Hari 1 — Apel Pembukaan</small></div>
+      <!-- AKTIFKAN BARIS INI: <img class="galeri-img" src="https://drive.google.com/uc?export=view&id=GANTI_ID_FOTO_APEL" alt="Apel Pembukaan"> -->
+      <div class="galeri-caption">Apel pembukaan kegiatan pengabdian masyarakat, 21 Mei 2026</div>
+    </div>
+    <div class="galeri-item">
+      <div class="galeri-img-placeholder">🧹<small>Hari 1 — Kebersihan</small></div>
+      <div class="galeri-caption">Siswa bergotong royong membersihkan rumah tempat tinggal dan lingkungan sekitar</div>
+    </div>
+    <div class="galeri-item">
+      <div class="galeri-img-placeholder">📖<small>Hari 1 — Tahlil</small></div>
+      <div class="galeri-caption">Rutinan yasin dan tahlil bersama warga di malam Jumat</div>
+    </div>
+
+    <!-- Foto Hari 2 -->
+    <div class="galeri-item">
+      <div class="galeri-img-placeholder">🌙<small>Hari 2 — Subuh Berjamaah</small></div>
+      <div class="galeri-caption">Sholat Subuh berjamaah di masjid — aktivitas rutin selama pengabdian</div>
+    </div>
+    <div class="galeri-item">
+      <div class="galeri-img-placeholder">🎤<small>Hari 2 — Sosialisasi SMP</small></div>
+      <div class="galeri-caption">Tim sosialisasi mempresentasikan profil SMK Al Kaaffah kepada siswa SMPN 2 Wates</div>
+    </div>
+    <div class="galeri-item">
+      <div class="galeri-img-placeholder">📚<small>Hari 2 — Mengajar TPQ</small></div>
+      <div class="galeri-caption">Siswa mengajar mengaji dan surat pendek kepada anak-anak TPQ</div>
+    </div>
+
+    <!-- Foto Hari 3 -->
+    <div class="galeri-item">
+      <div class="galeri-img-placeholder">🌱<small>Hari 3 — Green House</small></div>
+      <div class="galeri-caption">Kegiatan di Green House Pak Imam — menanam bibit melon</div>
+    </div>
+    <div class="galeri-item">
+      <div class="galeri-img-placeholder">⚽<small>Hari 3 — Olahraga</small></div>
+      <div class="galeri-caption">Olahraga pagi bersama — lari lapangan dan main bola sebelum kegiatan inti</div>
+    </div>
+    <div class="galeri-item">
+      <div class="galeri-img-placeholder">🚌<small>Hari 3 — Pulang</small></div>
+      <div class="galeri-caption">Persiapan kepulangan ke Kepanjen setelah tiga hari pengabdian</div>
+    </div>
+  </div>
+
+  <!-- VIDEO SECTION -->
+  <h3 style="font-family:'Playfair Display',serif; color:var(--hijau); margin:3rem 0 1rem; font-size:1.2rem;">🎬 Video Dokumentasi</h3>
+  <p style="margin-bottom:1.5rem; color:var(--teks-sekunder); font-size:0.9rem;">
+    Untuk embed video Google Drive: ganti <code>GANTI_ID_VIDEO</code> dengan ID file video (folder Drive harus dibagikan publik).
+  </p>
+
+  <div class="video-grid">
+    <div class="video-card">
+      <!-- Embed video Google Drive: -->
+      <!-- <iframe src="https://drive.google.com/file/d/GANTI_ID_VIDEO_1/preview" allowfullscreen></iframe> -->
+      <div class="video-placeholder">
+        ▶
+        <small>Video Hari 1 — Apel & Kegiatan Pembukaan</small>
+      </div>
+      <div class="video-caption">Dokumentasi video hari pertama kegiatan pengabdian</div>
+    </div>
+    <div class="video-card">
+      <div class="video-placeholder">
+        ▶
+        <small>Video Hari 2 — Sosialisasi & Mengajar TPQ</small>
+      </div>
+      <div class="video-caption">Momen mengajar ngaji dan sosialisasi ke SMPN 2 Wates</div>
+    </div>
+    <div class="video-card">
+      <div class="video-placeholder">
+        ▶
+        <small>Video Hari 3 — Green House & Kepulangan</small>
+      </div>
+      <div class="video-caption">Kegiatan pertanian dan momen perpisahan dengan warga Desa Wates</div>
+    </div>
+  </div>
+
+  <!-- PANDUAN EMBED -->
+  <div style="background:var(--krem-dark); border-radius:12px; padding:1.5rem; margin-top:2rem; font-size:0.85rem; color:var(--teks-sekunder);">
+    <strong style="color:var(--hijau);">📌 Cara menambah foto/video dari Google Drive:</strong>
+    <ol style="margin-top:0.75rem; padding-left:1.25rem; line-height:2;">
+      <li>Buka file di Google Drive → klik kanan → <em>Get link</em> → pilih <strong>Anyone with the link</strong></li>
+      <li>Salin ID file (bagian setelah <code>/d/</code> dan sebelum <code>/view</code>)</li>
+      <li>Untuk foto: gunakan <code>https://drive.google.com/uc?export=view&id=<strong>ID_FILE</strong></code></li>
+      <li>Untuk video: gunakan <code>https://drive.google.com/file/d/<strong>ID_FILE</strong>/preview</code> dalam tag <code>&lt;iframe&gt;</code></li>
+      <li>Ganti teks placeholder di HTML dengan kode di atas</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══════════════ PENUTUP ═══════════════ -->
+<section id="penutup">
+  <div class="section-label">Bab V</div>
+  <h2 class="section-title">Penutup & Kesimpulan</h2>
+  <div class="section-divider"></div>
+
+  <div class="prose" style="margin-bottom:3rem;">
+    <p>Kegiatan Pengabdian Masyarakat Siswa Kelas X SMK Al Kaaffah Kepanjen Tahun 2026 telah
+    terlaksana dengan baik dan lancar selama tiga hari (21–23 Mei 2026) di Desa Wates,
+    Kabupaten Blitar. Seluruh rangkaian kegiatan berjalan sesuai dengan program yang telah
+    direncanakan, mulai dari apel pembukaan, kegiatan lapangan yang beragam, hingga
+    kepulangan ke sekolah.</p>
+
+    <p><strong>Kesimpulan utama yang dapat diambil:</strong></p>
+    <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+      <li>Seluruh 19 siswa berhasil mengikuti dan menyelesaikan rangkaian kegiatan pengabdian dengan penuh semangat dan tanggung jawab</li>
+      <li>Kegiatan yang paling dominan adalah kebersihan masjid/mushola (hampir seluruh siswa berpartisipasi) dan kegiatan Green House pertanian melon (hari ketiga)</li>
+      <li>Siswa memperoleh pengalaman langsung dalam mengajar ngaji di TPQ, berpidato di hadapan siswa SMP, berinteraksi dengan petani, dan hidup bermasyarakat</li>
+      <li>Nilai-nilai religius, gotong royong, kepedulian, dan tanggung jawab terbentuk dan diperkuat melalui kegiatan nyata di lapangan</li>
+      <li>Program sosialisasi ke SMPN 2 Wates berhasil dilaksanakan dan menjadi pengalaman berharga dalam melatih kepercayaan diri siswa</li>
+    </ul>
+
+    <p>Kami mengucapkan terima kasih yang sebesar-besarnya kepada semua pihak yang telah
+    mendukung terselenggaranya kegiatan ini. Semoga laporan ini dapat menjadi bahan evaluasi
+    dan penyempurnaan program pengabdian masyarakat di masa mendatang.</p>
+  </div>
+
+  <div class="penutup-box">
+    <h3>Terima Kasih atas Dedikasinya 🌱</h3>
+    <p>Kepada seluruh siswa yang telah memberikan yang terbaik, kepada warga Desa Wates yang menyambut dengan hangat, dan kepada guru pendamping yang membimbing dengan penuh kasih sayang — jazakumullah khairan katsiran.</p>
+    <div class="ttd-penutup">
+      <div class="item">
+        <div class="space"></div>
+        <div class="name">Guru Pendamping</div>
+        <small>Bu Fitri & Pak Ibnu</small>
+      </div>
+      <div class="item">
+        <div class="space"></div>
+        <div class="name">Kepala Sekolah</div>
+        <small>SMK Al Kaaffah Kepanjen</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>SMK Al Kaaffah Kepanjen</span> · Yayasan Pondok Pesantren Al Islamu Al Ainul Baahiroh ·
+  Laporan Pengabdian Masyarakat Siswa Kelas X · Desa Wates, Kab. Blitar · <span>Mei 2026</span>
+</footer>
+
+<script>
+  function toggle(btn) {
+    const item = btn.closest('.acc-item');
+    item.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
